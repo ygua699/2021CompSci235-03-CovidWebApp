@@ -28,9 +28,11 @@ def add_user(user_name: str, password: str, repo: AbstractRepository):
     # Create and store the new User, with password encrypted.
     user = User(user_name, password_hash)
     repo.add_user(user)
+    # print(repo.get_all_user_info())
 
 
 def get_user(user_name: str, repo: AbstractRepository):
+    # print(repo.get_all_user_info())
     user = repo.get_user(user_name)
     if user is None:
         raise UnknownUserException
